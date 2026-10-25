@@ -1,0 +1,114 @@
+.branding {
+  padding-bottom: 80px;
+}
+.brand-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 24px;
+}
+.brand-card.large {
+  grid-row: span 2;
+}
+.brand-card img {
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.brand-card:hover img {
+  transform: scale(1.04);
+}
+.brand-visual {
+  min-height: 280px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #11100f;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+}
+.large .brand-visual {
+  height: calc(100% - 70px);
+  min-height: 660px;
+}
+.brand-visual.coral {
+  background: var(--color-red);
+  color: var(--color-paper);
+}
+.brand-visual.coral span {
+  font-size: clamp(80px, 10vw, 170px);
+  line-height: 0.78;
+  text-align: center;
+  font-weight: 700;
+  transform: rotate(-5deg);
+}
+.brand-visual small {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.project-tags {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+.project-tags b {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  padding: 6px 9px;
+  font: 700 8px var(--font-sans);
+  letter-spacing: 0.1em;
+  transform: rotate(-2deg);
+}
+.project-tags b:nth-child(2) {
+  background: var(--color-orange);
+  transform: rotate(2deg);
+}
+.brand-visual.image img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  filter: grayscale(1);
+}
+.brand-visual.image span {
+  color: white;
+  z-index: 1;
+  font-size: 56px;
+  line-height: 0.85;
+}
+.brand-visual.aqua {
+  background: var(--color-aqua);
+}
+.brand-visual.aqua .orb {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: var(--color-orange);
+  box-shadow: 30px 20px 0 var(--color-red);
+}
+.brand-visual.aqua span {
+  position: absolute;
+  color: white;
+  font-size: 48px;
+  line-height: 0.85;
+  text-align: center;
+}
+
+@media (max-width: 850px) {
+  .brand-grid {
+    grid-template-columns: 1fr;
+  }
+  .brand-card.large {
+    grid-row: auto;
+  }
+  .large .brand-visual {
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand-visual.coral span {
+    font-size: 23vw;
+  }
+}

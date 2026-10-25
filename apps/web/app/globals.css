@@ -1,0 +1,45 @@
+@import 'tailwindcss';
+
+/* Order matters: later partials rely on overriding earlier ones. */
+@import '../styles/base.css';
+@import '../styles/doodle.css';
+@import '../styles/layout.css';
+@import '../styles/sections/hero.css';
+@import '../styles/sections/ticker.css';
+@import '../styles/sections/music.css';
+@import '../styles/sections/creative.css';
+@import '../styles/sections/branding.css';
+@import '../styles/sections/web.css';
+@import '../styles/sections/automation.css';
+@import '../styles/sections/consultancy.css';
+@import '../styles/pages/work.css';
+@import '../styles/pages/services.css';
+@import '../styles/pages/about.css';
+
+@theme {
+  --color-ink: #11100f;
+  --color-paper: #f2eee4;
+  --color-red: #ef352b;
+  --color-aqua: #15aeb0;
+  --color-orange: #f2a51a;
+  --font-display: var(--font-oswald), sans-serif;
+  --font-sans: var(--font-dm-sans);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  button {
+    cursor: pointer;
+  }
+}

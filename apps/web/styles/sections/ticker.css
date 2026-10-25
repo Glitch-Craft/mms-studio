@@ -1,0 +1,17 @@
+.ticker {
+  background: var(--color-red);
+  color: white;
+  padding: 13px 0;
+  font-family: var(--font-display);
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+.ticker div {
+  animation: ticker 20s linear infinite;
+}
+@keyframes ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}

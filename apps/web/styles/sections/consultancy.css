@@ -1,0 +1,100 @@
+.consultancy {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10vw;
+  padding: 120px 4vw;
+  background: #173b3c;
+  color: var(--color-paper);
+}
+.consultancy:before {
+  content: '06';
+  position: absolute;
+  right: 2%;
+  bottom: -5%;
+  color: rgba(255, 255, 255, 0.05);
+  font: 700 22vw var(--font-display);
+  line-height: 1;
+}
+.consultancy h2 em {
+  color: var(--color-orange);
+}
+.consultancy > div > p:not(.eyebrow) {
+  max-width: 500px;
+  line-height: 1.6;
+  margin: 35px 0;
+}
+.consultancy ul {
+  list-style: none;
+  padding: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+.consultancy li {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  font-size: 13px;
+}
+.consultancy form {
+  background: var(--color-orange);
+  color: var(--color-ink);
+  padding: 35px;
+  box-shadow: 14px 14px 0 var(--color-aqua);
+  transform: rotate(-1deg);
+}
+.consultancy form > p {
+  font-family: var(--font-display);
+  font-size: 32px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 9px;
+  margin-top: 18px;
+}
+input,
+textarea,
+select {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #8d887d;
+  background: transparent;
+  padding: 10px 0;
+  outline: none;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 14px;
+  border-radius: 0;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-red);
+}
+.submit {
+  border: 0;
+  background: var(--color-ink);
+  color: white;
+  width: 100%;
+  padding: 17px;
+  margin-top: 25px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+}
+
+@media (max-width: 850px) {
+  .consultancy {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .consultancy {
+    padding: 80px 20px;
+  }
+  .consultancy form {
+    padding: 25px 20px;
+  }
+}

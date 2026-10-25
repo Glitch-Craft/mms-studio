@@ -1,0 +1,142 @@
+main {
+  overflow: hidden;
+}
+
+.arrow {
+  display: inline-block;
+  font-size: 1.2em;
+  transition: transform 0.2s;
+}
+a:hover .arrow,
+button:hover .arrow,
+article:hover .arrow {
+  transform: translateX(4px);
+}
+.arrow.diagonal {
+  transform: rotate(-45deg);
+}
+a:hover .arrow.diagonal,
+button:hover .arrow.diagonal,
+article:hover .arrow.diagonal {
+  transform: rotate(-45deg) translateX(4px);
+}
+
+.eyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+}
+h1,
+h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+}
+h1 em,
+h2 em {
+  color: var(--color-red);
+  font-style: normal;
+}
+
+.section {
+  padding: 120px 4vw;
+}
+.section,
+.consultancy {
+  position: relative;
+}
+.section > :not(.doodle),
+.consultancy > :not(.doodle) {
+  position: relative;
+  z-index: 1;
+}
+.section-heading {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  align-items: end;
+  margin-bottom: 55px;
+}
+.section-heading h2,
+.web-intro h2,
+.creative-title h2,
+.consultancy h2 {
+  font-size: clamp(52px, 7vw, 112px);
+  margin-top: 18px;
+}
+.section-heading > p,
+.horizontal > p {
+  max-width: 390px;
+  line-height: 1.6;
+}
+
+.project-meta {
+  min-height: 70px;
+  padding: 16px 0;
+  position: relative;
+}
+.project-meta h3 {
+  font-size: 17px;
+  font-weight: 600;
+}
+.project-meta p {
+  font-size: 11px;
+  margin-top: 4px;
+  color: #726e67;
+}
+.project-meta .arrow {
+  position: absolute;
+  right: 4px;
+  top: 20px;
+}
+
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 5% cover 30%;
+  }
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(42px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .section {
+    padding: 80px 5vw;
+  }
+  .section-heading {
+    grid-template-columns: 1fr;
+  }
+  .horizontal {
+    align-items: start;
+  }
+}
+
+@media (max-width: 520px) {
+  .section-heading {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
