@@ -24,6 +24,15 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   title: { default: siteConfig.name, template: `%s — ${siteConfig.name}` },
   description: siteConfig.description,
+  // The preview image itself comes from app/opengraph-image.jpg. On Vercel, Next.js
+  // makes its URL absolute using the production domain.
+  openGraph: {
+    type: 'website',
+    siteName: siteConfig.name,
+    title: siteConfig.name,
+    description: siteConfig.description,
+  },
+  twitter: { card: 'summary_large_image' },
 }
 
 export default function RootLayout({
